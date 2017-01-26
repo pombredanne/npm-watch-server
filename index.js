@@ -41,6 +41,8 @@ changes.on('error', onError);
 
 const wss = new WebSocketServer({
     port: PORT,
+}, () => {
+    console.log('Listening port %s', PORT);
 });
 
 wss.on('connection', (conn) => {
