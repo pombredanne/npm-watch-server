@@ -5,6 +5,8 @@ const fetch = require('node-fetch');
 const WebSocketServer = require('ws').Server;
 const {EventEmitter} = require('events');
 
+const PORT = process.argv[2] || process.env.PORT || 8080;
+
 const changes = new ChangesStream({
     db: 'https://replicate.npmjs.com',
     since: 'now',
@@ -38,7 +40,7 @@ changes.on('data', (change) => {
 changes.on('error', onError);
 
 const wss = new WebSocketServer({
-    port: 8080,
+    port: PORT,
 });
 
 wss.on('connection', (conn) => {
