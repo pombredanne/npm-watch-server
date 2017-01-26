@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "changes-stream": "^2.2.0",
+    "node-fetch": "^1.6.3",
+    "ws": "^1.1.1"
+  }
+}
